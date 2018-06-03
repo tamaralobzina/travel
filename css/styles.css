@@ -15,19 +15,19 @@ body {
 header {
   display: flex;
   position: fixed;
+  justify-content: space-between;
+  align-items: center;
   z-index: 3000;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   background-color: transparent;
 }
 header h1 {
-  margin: 7px 0;
-  font-size: 1.5em;
+  margin: 0;
   vertical-align: middle;
+  font-size: 1.5em;
 }
 header h1::before {
   content: '';
@@ -47,7 +47,19 @@ nav * {
   margin: 0;
 }
 nav .search {
-  width: 20px;
+  margin: 5px 0px 5px 15px;
+  border-radius: 50%;
+  background-color: #E9565A;
+  padding: 10px;
+  fill: #f0f0f0;
+  transition: 0.2s linear;
+}
+nav .search polygon {
+  display: none;
+}
+nav .search:hover {
+  background-color: #f0f0f0;
+  fill: #e9565a;
 }
 nav ul {
   list-style: none;
@@ -55,20 +67,23 @@ nav ul {
 nav ul:first-child {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
 }
 nav ul li {
   position: relative;
-  padding: 5px 10px;
 }
 nav ul li:hover > ul {
   display: block;
 }
 nav ul li a {
+  color: #f0f0f0;
   display: block;
   width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
   text-decoration: none;
-  color: #202020;
-  text-shadow: 1px 1px 1px #404040;
+  text-shadow: 1px 1px 3px #404040;
 }
 nav ul li ul {
   position: absolute;

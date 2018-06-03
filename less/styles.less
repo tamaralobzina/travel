@@ -27,19 +27,19 @@ body {
 header {
   display: flex;
   position: fixed;
+  justify-content: space-between;
+  align-items: center;
   z-index: 3000;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
   flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   background-color: transparent;
 
   h1 {
-    margin: 7px 0;
-    font-size: 1.5em;
+    margin: 0;
     vertical-align: middle;
+    font-size: 1.5em;
     &::before {
       content: '';
       display: inline-block;
@@ -61,26 +61,59 @@ nav {
     margin: 0;
   }
   .search {
-    width: 20px;
+    margin: 5px 0px 5px 15px;
+    border-radius: 50%;
+    background-color: #E9565A;
+    padding: 10px;
+    fill: @color-text-light;
+    transition: 0.2s linear;
+    & polygon {
+      display: none;
+    }
+    &__bg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #F63;
+      transition: all $searchAT $easing;
+      transform: translate3d(-50%,-50%,0);
+      will-change: transform;
+
+
+    }
+    &:hover {
+      background-color: @color-main;
+      .search__bg {
+        transform: translate3d(-50%,-50%,0) scale(100);
+      }
+    }
+
+
   }
   ul {
     list-style: none;
     &:first-child {
       display: flex;
       flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
     }
     li {
       position: relative;
-      padding: 5px 10px;
       &:hover > ul{
         display: block;
       }
       a {
+        color: @color-text-light;
         display: block;
         width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
         text-decoration: none;
-        color: @color-text-dark;
-        text-shadow: 1px 1px 1px @color-additional;
+        text-shadow: 1px 1px 3px @color-additional;
       }
       ul {
         position: absolute;
@@ -369,3 +402,4 @@ end SCROLL EFFECT / PARALLAX
 .search-click:active, .search-click:hover, .search-click:focus {
   outline: 0;    outline-offset: 0;
 }
+

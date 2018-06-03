@@ -163,12 +163,26 @@ $(function(){
     var search = $('.search');
     var search_page=$('#search-box');
     search.click(function () {
-        if ( search.hasClass("remove-search") ) {
+        if ( search.hasClass("remove-search") )
+        {
+            $('.search > path').css('display','block');
+            $('.search > polygon').css('display','none');
+            search.attr("viewBox","-15 -15 90 90");
             search.removeClass('remove-search');
             search_page.css('display','none');
+            $(".search-click").val("");
+
         } else {
+            $('.search > path').css('display','none');
+            $('.search > polygon').css({'display':'block'});
+            $('.search > polygon').animate({'transform' : 'translateX(28px) translateY(28px) rotate(10deg)'}, 1000);
+            search.attr("viewBox","-10 -10 50 50");
+
             search.addClass('remove-search');
+            search.attr("src","images/remove.svg");
+
             search_page.css('display','block');
+            $('.search-click').focus();
         }
     });
-})
+});
