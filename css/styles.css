@@ -1,0 +1,312 @@
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  color: #202020;
+}
+@media screen and (max-width: 800px) {
+  .travel-map {
+    flex-flow: column nowrap;
+  }
+}
+.active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+header {
+  display: flex;
+  position: fixed;
+  z-index: 3000;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+}
+header h1 {
+  margin: 7px 0;
+  font-size: 1.5em;
+  vertical-align: middle;
+}
+header h1::before {
+  content: '';
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  background-image: url("../images/logotest.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav {
+  text-transform: uppercase;
+}
+nav * {
+  padding: 0;
+  margin: 0;
+}
+nav .search {
+  width: 20px;
+}
+nav ul {
+  list-style: none;
+}
+nav ul:first-child {
+  display: flex;
+  flex-flow: row nowrap;
+}
+nav ul li {
+  position: relative;
+  padding: 5px 10px;
+}
+nav ul li:hover > ul {
+  display: block;
+}
+nav ul li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #202020;
+  text-shadow: 1px 1px 1px #404040;
+}
+nav ul li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  transition: 3s linear;
+  min-width: 150px;
+}
+nav ul li ul li ul {
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+.travel-map {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+.destinations {
+  text-align: center;
+  width: 30%;
+}
+.destinations-all {
+  padding: 10px;
+}
+.destinations-all * {
+  margin: 0;
+  padding: 0;
+}
+.destinations-all ul {
+  list-style: none;
+}
+.destinations-all ul li {
+  margin: 0 0 2px;
+}
+.destinations-all a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: #202020;
+}
+.destinations-all [type=checkbox] {
+  display: none;
+}
+.destinations-all [type=checkbox]:checked ~ label {
+  color: #f0f0f0;
+  background-color: #404040;
+}
+.destinations-all [type=checkbox]:checked ~ label ~ .content {
+  height: auto;
+  padding: 10px;
+  border: 1px solid #404040;
+}
+.destinations-all label {
+  display: block;
+  border: 1px solid #404040;
+  cursor: pointer;
+  padding: 10px;
+}
+.destinations-all label:hover {
+  color: #f0f0f0;
+  background-color: #404040;
+}
+.destinations-all .content {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+footer {
+  position: relative;
+  padding: 30px 70px;
+  text-align: center;
+  color: #f0f0f0;
+  font-size: 2em;
+  background-color: #e9565a;
+}
+footer::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 46%;
+  margin: -47px 0;
+  padding: 30px;
+  border: 20px solid white;
+  border-radius: 50%;
+  text-align: center;
+  background-image: url(../images/location-pointer.png);
+  background-color: #e9565a;
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: center;
+}
+/*
+start SCROLL EFFECT / PARALLAX
+ */
+.parallax-fullscreen {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* if you wonna remove the parallax effect, then add scroll to background-attachment, as
+  fixed=parallax
+  scroll=fixed
+   */
+  background-attachment: fixed;
+}
+.parallax-fullscreen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.parallax-fullscreen .pretext {
+  z-index: 30;
+  padding: 20px;
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  background-color: #e9565a;
+  color: #f0f0f0;
+}
+/*
+end SCROLL EFFECT / PARALLAX
+ */
+.image1 {
+  background-image: url('../images/paralax1.JPG');
+}
+.image2 {
+  background-image: url('../images/paralax2.JPG');
+}
+/*MAP*/
+#vmap {
+  width: 70%;
+  height: 500px;
+}
+#vmap svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+#vmap svg g {
+  transform: scale(0.9);
+}
+.jqvmap-label {
+  position: absolute;
+  display: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #404040;
+  color: white;
+  font-size: smaller;
+  padding: 5px;
+  pointer-events: none;
+}
+.jqvmap-region {
+  cursor: pointer;
+}
+/*! Gray v1.6.0 (https://github.com/karlhorky/gray) | MIT */
+.grayscale {
+  /* Firefox 10-34 */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='saturate' values='0'/></filter></svg>#grayscale");
+  /*
+    Chrome 19+,
+    Safari 6+,
+    Safari 6+ iOS,
+    Opera 15+
+  */
+  -webkit-filter: grayscale(1);
+  /* Firefox 35+ */
+  filter: grayscale(1);
+  /* IE 6-9 */
+  filter: gray;
+}
+.grayscale.grayscale-fade {
+  transition: filter .5s;
+}
+/* Webkit hack until filter is unprefixed */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .grayscale.grayscale-fade {
+    -webkit-transition: -webkit-filter 0.5s;
+    transition: -webkit-filter 0.5s;
+  }
+}
+.grayscale.grayscale-off,
+.grayscale.grayscale-fade:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+/* Background element */
+.grayscale.grayscale-replaced {
+  -webkit-filter: none;
+  filter: none;
+}
+.grayscale.grayscale-replaced > svg {
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  opacity: 1;
+}
+.grayscale.grayscale-replaced.grayscale-off > svg,
+.grayscale.grayscale-replaced.grayscale-fade:hover > svg {
+  opacity: 0;
+}
+#search-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1098;
+  background-color: white;
+  display: none;
+}
+.search-click {
+  font-size: 42px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  border: 0;
+  color: #202020;
+  text-align: center;
+}
+.search-click:active,
+.search-click:hover,
+.search-click:focus {
+  outline: 0;
+  outline-offset: 0;
+}
