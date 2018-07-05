@@ -1,0 +1,229 @@
+body, html{
+    height:100%;
+    margin:0;
+    font-size:16px;
+    font-family:"Lato", sans-serif;
+    font-weight:400;
+    line-height:1.8em;
+    color:#666;
+}
+
+/* start of Nav Bar
+ */
+
+header {
+    display: flex;
+    position: fixed;
+    z-index: 3000;
+    width: 100%;
+    box-sizing: border-box;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: transparent;                          /*tam added transparent*/
+}
+
+header h1 {
+    font-size: 1.5em;
+    vertical-align: middle;
+}
+
+header h1::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    background-image: url("../images/logotest.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (max-width: 800px) {
+    flex-flow: column nowrap;
+}
+nav * {
+    margin: 0;
+}
+nav ul {
+    list-style: none;
+}
+nav ul:first-child {
+    display: flex;
+    flex-flow: row nowrap;
+}
+nav ul li {
+    position: relative;
+    padding: 20px 10px;
+    font-size: 18px;
+    display:block;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+}
+
+nav ul li:hover > ul {
+    display: block;
+}
+nav ul li a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color:rgba(255,255,255, 0.9);
+}
+nav ul li ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    transition: 3s linear;
+    min-width: 150px;
+}
+nav ul li ul li ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.active {
+    background-color: rgba(255,255,255, 0.8);
+}
+
+/* Start Search Bar*/
+
+.search {
+    background-image: url("../images/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.remove-search{
+    background-image: url("../images/remove.svg");
+}
+
+#search-box{
+    position:fixed;
+    width:100%;
+    height: 100%;
+    z-index: 1098;
+    background-color: white;
+    display:none;
+}
+
+.search-click{
+font-size:42px;
+    box-sizing:border-box;
+    dispaly:inline-block;
+    width:100%;
+    height:auto;
+    position:absolute;
+    top:50%;
+    border:0;
+    color:black;
+    text-align:center;
+}
+
+.search-click:active, .search-click:hover, .search-click:focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+input{
+    cursor:text;
+}
+
+/* End Search Bar*/
+
+
+/* end of nav bar */
+
+
+/*
+start SCROLL EFFECT / PARALLAX
+ */
+
+.imageunite{
+    position:relative;
+    opacity:0.70;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+
+    /* if you wonna remove the parallax effect, then add scroll to background-attachment, as
+    fixed=parallax
+    scroll=fixed
+     */
+
+    background-attachment:fixed;
+}
+
+/*
+end SCROLL EFFECT / PARALLAX
+ */
+
+
+.pimg1{
+    background-image:url('../images/paralax1.JPG');
+    min-height:100%;
+}
+
+.pimg2{
+    background-image:url('../images/paralax2.JPG');
+    min-height:100%;
+}
+
+.pimg3{
+    background-image:url('../images/paralax3.JPG');
+    min-height:400px;
+}
+
+/*
+to add brightness for images
+ */
+
+.section {
+    text-align:center;
+    padding:50px 80px;
+}
+
+.section-light{
+    background-color:#f4f4f4;
+}
+
+/*
+have chosen to NOT use the dark section
+.section-dark{
+    background-color:#f4f4f4;
+}
+*/
+
+.pretext{
+    position:absolute;
+    top:50%;
+    width:100%;
+    text-align:center;
+    color:#000;
+    font-size:27px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+}
+
+.pretext .border{
+    background-color:#111;
+    color:#fff;
+    padding:20px;
+
+}
+
+.pretext .border.trans{
+    background-color: transparent;
+}
+
+/* start responsiveness for mobile devices*/
+
+@media(max-width:568px){
+    .pimg1, .pimg2, .pimg3{
+        background-attachment:scroll;
+    }
+}
+
+/* end responsiveness for mobile devices*/
