@@ -5,7 +5,6 @@
   background-position: center;
   background-color: cyan;
   color: white;
-  box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   overflow: hidden;
 }
@@ -38,6 +37,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 19.74vw);
   grid-template-rows: repeat(auto-fit, 19.74vw);
+  grid-gap: 10px;
 }
 .blocks-grid .block-small {
   grid-column: span 1;

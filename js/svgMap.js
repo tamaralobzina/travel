@@ -2,9 +2,9 @@
  //Поступил массив кодов посещенных стран
  var codeCountries = ['ua', 'fr', 'en', 'de', 'no'];
 
- var colorCountry = '#1076C8'; // Цвет всех стран
+ var colorCountry = '#404040'; // Цвет всех стран
  var focusCountry = '#FF9900'; //  Цвет подсветки стран при наведении на объекты из списка
- var selectCountry = 'red'; // Цвет изначально подсвеченных стран - посещенных
+ var selectCountry = '#ff4040'; // Цвет изначально подсвеченных стран - посещенных
 
  var highlightedCountries = {};
 
@@ -24,24 +24,24 @@
          color: colorCountry,
          colors: highlightedCountries,
          hoverOpacity: 0.7,
-         enableZoom: true,
+         enableZoom: false,
          showTooltip: true,
 
 
 
-         //  При наведении на посещенную страну отображаем ее название
-         onLabelShow: function(event, label, code){
-             $('.country-name').empty();
-             $('.country-name').append(label.text());
-
-             var pos = $(this).offset();
-             var pageX = event.pageX;
-             var pageY = event.pageY;
-             var x = pageX - pos.left + 10;
-             var y = pageY - pos.top + 10;
-
-             $('.country-name').css({"display": "block", "left" : x + "px", "top" : y + "px"});
-         },
+         // //  При наведении на посещенную страну отображаем ее название - если нужно выводить где-то в другом месте
+         // onLabelShow: function(event, label, code){
+         //     $('.country-name').empty();
+         //     $('.country-name').append(label.text());
+         //
+         //     var pos = $(this).offset();
+         //     var pageX = event.pageX;
+         //     var pageY = event.pageY;
+         //     var x = pageX - pos.left + 10;
+         //     var y = pageY - pos.top + 10;
+         //
+         //     $('.country-name').css({"display": "block", "left" : x + "px", "top" : y + "px"});
+         // },
 
          // Клик по стране
          onRegionClick: function(event, code, region){
