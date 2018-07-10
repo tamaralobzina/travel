@@ -1,16 +1,16 @@
-$(function() {
-    //caches a jQuery object containing the header element
-    var header = $("header");
-    $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 650) {
-            header.addClass("active");
-        } else{
-            header.removeClass('active');
-        }
-    });
-});
+// $(function() {
+//     //caches a jQuery object containing the header element
+//     var header = $("header");
+//     $(window).scroll(function() {
+//         var scroll = $(window).scrollTop();
+//
+//         if (scroll >= 650) {
+//             header.addClass("active");
+//         } else{
+//             header.removeClass('active');
+//         }
+//     });
+// });
 
 
 // $('.column img').hover(function () {
@@ -166,6 +166,7 @@ $(function(){
         if ( search.hasClass("remove-search") )
         {
             $('.search > path').css('display','block');
+            $('.search > path').animate({'transform' : 'translateX(28px) translateY(28px) rotate(10deg)'}, 1000);
             $('.search > polygon').css('display','none');
             search.attr("viewBox","-15 -15 90 90");
             search.removeClass('remove-search');

@@ -1,8 +1,9 @@
-@color-main: #e9565a;
-@color-additional: #404040;
-@color-text-light: #f0f0f0;
-@color-text-dark: #202020;
-@color-background-light: white;
+@import "_variables.less";
+@import "_menu.less";
+
+
+
+
 
 body {
   margin: 0;
@@ -18,11 +19,11 @@ body {
   }
 }
 
-.active {
-  //background-color: rgba(255, 64, 64, 0.3);
-  background-color: rgba(255, 255, 255, 0.5);
-
-}
+//.active {
+//  //background-color: rgba(255, 64, 64, 0.3);
+//  background-color: rgba(255, 255, 255, 0.5);
+//
+//}
 
 header {
   display: flex;
@@ -34,7 +35,8 @@ header {
   padding: 0 20px;
   box-sizing: border-box;
   flex-flow: row nowrap;
-  background-color: transparent;
+  //background-color: transparent;
+  background-color: @color-background-light;
 
   h1 {
     margin: 0;
@@ -53,85 +55,85 @@ header {
   }
 }
 
-
-nav {
-  text-transform: uppercase;
-  * {
-    padding: 0;
-    margin: 0;
-  }
-  .search {
-    margin: 5px 0px 5px 15px;
-    border-radius: 50%;
-    background-color: #E9565A;
-    padding: 10px;
-    fill: @color-text-light;
-    transition: 0.2s linear;
-    & polygon {
-      display: none;
-    }
-    &__bg {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #F63;
-      transition: all $searchAT $easing;
-      transform: translate3d(-50%,-50%,0);
-      will-change: transform;
-
-
-    }
-    &:hover {
-      background-color: @color-main;
-      .search__bg {
-        transform: translate3d(-50%,-50%,0) scale(100);
-      }
-    }
-
-
-  }
-  ul {
-    list-style: none;
-    &:first-child {
-      display: flex;
-      flex-flow: row nowrap;
-      justify-content: center;
-      align-items: center;
-    }
-    li {
-      position: relative;
-      &:hover > ul{
-        display: block;
-      }
-      a {
-        color: @color-text-light;
-        display: block;
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-        text-decoration: none;
-        text-shadow: 1px 1px 3px @color-additional;
-      }
-      ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-        transition: 3s linear;
-        min-width: 150px;
-        li ul{
-          position: absolute;
-          top: 0;
-          left: 100%;
-        }
-      }
-    }
-  }
-
-}
+//
+//nav {
+//  text-transform: uppercase;
+//  * {
+//    padding: 0;
+//    margin: 0;
+//  }
+//  .search {
+//    margin: 5px 0px 5px 15px;
+//    border-radius: 50%;
+//    background-color: #E9565A;
+//    padding: 10px;
+//    fill: @color-text-light;
+//    transition: 0.2s linear;
+//    & polygon {
+//      display: none;
+//    }
+//    &__bg {
+//      position: absolute;
+//      left: 50%;
+//      top: 50%;
+//      width: 100%;
+//      height: 100%;
+//      border-radius: 50%;
+//      background: #F63;
+//      transition: all $searchAT $easing;
+//      transform: translate3d(-50%,-50%,0);
+//      will-change: transform;
+//
+//
+//    }
+//    &:hover {
+//      background-color: @color-main;
+//      .search__bg {
+//        transform: translate3d(-50%,-50%,0) scale(100);
+//      }
+//    }
+//
+//
+//  }
+//  ul {
+//    list-style: none;
+//    &:first-child {
+//      display: flex;
+//      flex-flow: row nowrap;
+//      justify-content: center;
+//      align-items: center;
+//    }
+//    li {
+//      position: relative;
+//      &:hover > ul{
+//        display: block;
+//      }
+//      a {
+//        color: @color-text-light;
+//        display: block;
+//        width: 100%;
+//        padding: 15px;
+//        box-sizing: border-box;
+//        text-decoration: none;
+//        text-shadow: 1px 1px 3px @color-additional;
+//      }
+//      ul {
+//        position: absolute;
+//        top: 100%;
+//        left: 0;
+//        display: none;
+//        transition: 3s linear;
+//        min-width: 150px;
+//        li ul{
+//          position: absolute;
+//          top: 0;
+//          left: 100%;
+//        }
+//      }
+//    }
+//  }
+//
+//}
 
 
 .travel-map {
@@ -204,27 +206,31 @@ nav {
 
 footer {
   position: relative;
-  padding: 30px 70px;
+  padding: 9px;
   text-align: center;
-  color: @color-text-light;
+  color: #f0f0f0;
   font-size: 2em;
-  background-color: @color-main;
+  background-color: #e9565a;
   &::before {
     content: "";
     display: inline-block;
     position: absolute;
     top: 0;
     left: 46%;
-    margin: -47px 0;
-    padding: 30px;
-    border: 20px solid @color-background-light;
+    margin: -49px 0;
+    padding: 23px;
+    border: 16px solid white;
     border-radius: 50%;
     text-align: center;
     background-image: url(../images/location-pointer.png);
-    background-color: @color-main;
+    background-color: #e9565a;
     background-repeat: no-repeat;
     background-size: 55%;
     background-position: center;
+  }
+  h3 {
+    margin: 30px 0;
+    font-size: 0.9em;
   }
 }
 
@@ -239,18 +245,18 @@ start SCROLL EFFECT / PARALLAX
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 99vh;
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(255,255,255,0.2);
-  }
+  //&::before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  bottom: 0;
+  //  width: 100%;
+  //  background-color: rgba(255,255,255,0.2);
+  //}
 
   /* if you wonna remove the parallax effect, then add scroll to background-attachment, as
   fixed=parallax

@@ -12,32 +12,31 @@
   position: absolute;
   top: 100%;
   left: 0;
-  height: 100%;
+  height: 250px;
   padding: 30px;
   background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
   transition: all 0.5s;
 }
 [class*=block-]:hover div {
   top: 0;
 }
 .block-small {
-  width: 19.74vw;
-  height: 19.74vw;
+  height: 250px;
 }
 .block-wide {
-  width: 39.48vw;
   height: 19.74vw;
 }
 .block-large {
-  width: 39.48vw;
   height: 39.48vw;
 }
 .blocks-grid {
+  margin: 10px;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 19.74vw);
-  grid-template-rows: repeat(auto-fit, 19.74vw);
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 19.3%);
+  grid-template-rows: repeat(auto-fit, 250px);
+  grid-gap: 10px 0.87%;
 }
 .blocks-grid .block-small {
   grid-column: span 1;

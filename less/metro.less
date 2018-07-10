@@ -1,4 +1,4 @@
-@blockSmall: 19.74vw 19.74vw;
+@blockSmall: 19.74vw 250px;
 @blockWide:  extract(@blockSmall, 1)*2 extract(@blockSmall, 1);
 @blockLarge: extract(@blockSmall, 1)*2 extract(@blockSmall, 1)*2;
 
@@ -13,11 +13,12 @@
   overflow: hidden;
   div {
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0;
-    height: 100%;
+    height: 250px;
     padding: 30px;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
     transition: all 0.5s;
   }
   &:hover div {
@@ -27,25 +28,26 @@
 
 .block {
   &-small {
-    width: extract(@blockSmall, 1);
+    //width: extract(@blockSmall, 1);
     height: extract(@blockSmall, 2);
   }
   &-wide {
-    width: extract(@blockWide, 1);
+    //width: extract(@blockWide, 1);
     height: extract(@blockWide, 2);
   }
   &-large {
-    width: extract(@blockLarge, 1);
+    //width: extract(@blockLarge, 1);
     height: extract(@blockLarge, 2);
   }
 }
 
 .blocks-grid {
+  margin: 10px;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit,  extract(@blockSmall, 1));
-  grid-template-rows: repeat(auto-fit,  extract(@blockSmall, 1));
-  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit,  19.3%);
+  grid-template-rows: repeat(auto-fit,  extract(@blockSmall, 2));
+  grid-gap: 10px 0.87%;
 
   .block-small {
     grid-column: span 1;

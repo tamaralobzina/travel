@@ -1,3 +1,78 @@
+nav {
+  text-transform: uppercase;
+}
+nav .search {
+  margin: 5px 0px 5px 15px;
+  border-radius: 50%;
+  background-color: #e9565a;
+  padding: 6px;
+  fill: #f0f0f0;
+  transition: 0.2s linear;
+}
+nav .search polygon {
+  display: none;
+}
+nav .search:hover {
+  background-color: #f0f0f0;
+  fill: #e9565a;
+}
+.search-button__bg {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  will-change: transform;
+  transform: translate3d(-50%, -50%, 0);
+}
+.search-button:hover__bg {
+  transform: translate3d(-50%, -50%, 0) scale(100);
+}
+.first-level-navigation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.first-level-navigation__item {
+  position: relative;
+}
+.first-level-navigation__item:hover > .second-level-navigation {
+  display: flex;
+}
+.second-level-navigation {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40vw;
+  padding: 20px;
+  background-color: white;
+  transition: 3s linear;
+}
+.second-level-navigation__list {
+  list-style: none;
+  min-width: 125px;
+  padding: 0;
+  margin: 0;
+}
+.link-navigation {
+  color: #202020;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+}
+.link-navigation_mini {
+  padding: 10px;
+}
 body {
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -9,9 +84,6 @@ body {
     flex-flow: column nowrap;
   }
 }
-.active {
-  background-color: rgba(255, 255, 255, 0.5);
-}
 header {
   display: flex;
   position: fixed;
@@ -22,7 +94,7 @@ header {
   padding: 0 20px;
   box-sizing: border-box;
   flex-flow: row nowrap;
-  background-color: transparent;
+  background-color: white;
 }
 header h1 {
   margin: 0;
@@ -38,65 +110,6 @@ header h1::before {
   background-image: url("../images/logotest.png");
   background-repeat: no-repeat;
   background-size: cover;
-}
-nav {
-  text-transform: uppercase;
-}
-nav * {
-  padding: 0;
-  margin: 0;
-}
-nav .search {
-  margin: 5px 0px 5px 15px;
-  border-radius: 50%;
-  background-color: #E9565A;
-  padding: 10px;
-  fill: #f0f0f0;
-  transition: 0.2s linear;
-}
-nav .search polygon {
-  display: none;
-}
-nav .search:hover {
-  background-color: #f0f0f0;
-  fill: #e9565a;
-}
-nav ul {
-  list-style: none;
-}
-nav ul:first-child {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-nav ul li {
-  position: relative;
-}
-nav ul li:hover > ul {
-  display: block;
-}
-nav ul li a {
-  color: #f0f0f0;
-  display: block;
-  width: 100%;
-  padding: 15px;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-shadow: 1px 1px 3px #404040;
-}
-nav ul li ul {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  transition: 3s linear;
-  min-width: 150px;
-}
-nav ul li ul li ul {
-  position: absolute;
-  top: 0;
-  left: 100%;
 }
 .travel-map {
   display: flex;
@@ -158,7 +171,7 @@ nav ul li ul li ul {
 }
 footer {
   position: relative;
-  padding: 30px 70px;
+  padding: 9px;
   text-align: center;
   color: #f0f0f0;
   font-size: 2em;
@@ -170,9 +183,9 @@ footer::before {
   position: absolute;
   top: 0;
   left: 46%;
-  margin: -47px 0;
-  padding: 30px;
-  border: 20px solid white;
+  margin: -49px 0;
+  padding: 23px;
+  border: 16px solid white;
   border-radius: 50%;
   text-align: center;
   background-image: url(../images/location-pointer.png);
@@ -180,6 +193,10 @@ footer::before {
   background-repeat: no-repeat;
   background-size: 55%;
   background-position: center;
+}
+footer h3 {
+  margin: 30px 0;
+  font-size: 0.9em;
 }
 /*
 start SCROLL EFFECT / PARALLAX
@@ -190,7 +207,7 @@ start SCROLL EFFECT / PARALLAX
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: 99vh;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -199,14 +216,6 @@ start SCROLL EFFECT / PARALLAX
   scroll=fixed
    */
   background-attachment: fixed;
-}
-.parallax-fullscreen::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
 }
 .parallax-fullscreen .pretext {
   z-index: 30;

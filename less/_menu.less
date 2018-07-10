@@ -1,0 +1,89 @@
+nav {
+  text-transform: uppercase;
+  .search {
+    margin: 5px 0px 5px 15px;
+    border-radius: 50%;
+    background-color: @color-main;
+    padding: 6px;
+    fill: @color-text-light;
+    transition: 0.2s linear;
+    & polygon {
+      display: none;
+    }
+
+    &:hover {
+      background-color: @color-text-light;
+      fill: @color-main;
+    }
+
+
+  }
+
+}
+
+.search-button {
+  &__bg {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: @color-background-light;
+    will-change: transform;
+    //transition: all $searchAT $easing;
+    transform: translate3d(-50%,-50%,0);
+  }
+  &:hover {
+    &__bg {
+      transform: translate3d(-50%,-50%,0) scale(100);
+    }
+  }
+}
+
+.first-level-navigation {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  &__item {
+    position: relative;
+    &:hover > .second-level-navigation {
+      display: flex;
+    }
+  }
+}
+
+.second-level-navigation {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 40vw;
+  padding: 20px;
+  background-color: white;
+  transition: 3s linear;
+  &__list {
+    list-style: none;
+    min-width: 125px;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.link-navigation {
+  color: @color-text-dark;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  &_mini {
+    padding: 10px;
+  }
+
+}
