@@ -1,6 +1,6 @@
 @blockSmall: 19.74vw 250px;
-@blockWide:  extract(@blockSmall, 1)*2 extract(@blockSmall, 1);
-@blockLarge: extract(@blockSmall, 1)*2 extract(@blockSmall, 1)*2;
+@blockWide:  extract(@blockSmall, 1)*2 extract(@blockSmall, 2);
+@blockLarge: extract(@blockSmall, 1)*2 extract(@blockSmall, 2)*2;
 
 [class*=block-] {
   display: block;
@@ -15,7 +15,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    height: 250px;
+    height: 100%;
     padding: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
@@ -37,7 +37,7 @@
   }
   &-large {
     //width: extract(@blockLarge, 1);
-    height: extract(@blockLarge, 2);
+    height: extract(@blockLarge, 2) + 10px;
   }
 }
 

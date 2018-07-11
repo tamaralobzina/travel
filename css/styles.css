@@ -57,21 +57,30 @@ nav .search:hover {
 }
 .second-level-navigation__list {
   list-style: none;
-  min-width: 125px;
   padding: 0;
   margin: 0;
+}
+.second-level-navigation__list-container {
+  margin: 0 40px;
 }
 .link-navigation {
   color: #202020;
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 15px 15px 5px 15px;
   box-sizing: border-box;
   text-decoration: none;
   cursor: pointer;
 }
 .link-navigation_mini {
-  padding: 10px;
+  padding: 0;
+  margin: 10px 0;
+}
+.link-navigation_mini:hover {
+  color: #e9565a;
+}
+.link-navigation:hover > .red-line {
+  width: 20px;
 }
 body {
   margin: 0;
@@ -333,4 +342,21 @@ end SCROLL EFFECT / PARALLAX
 .search-click:focus {
   outline: 0;
   outline-offset: 0;
+}
+.title {
+  font-size: 1.8em;
+  margin: 20px auto;
+  text-align: center;
+}
+.red-line {
+  display: block;
+  border-bottom: 3px solid red;
+  width: 6%;
+  margin: 6px auto;
+  text-align: center;
+  transition: 0.2s linear;
+}
+.red-line_dynamic {
+  width: 0;
+  margin: 4px auto;
 }

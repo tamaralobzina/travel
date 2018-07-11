@@ -19,25 +19,36 @@
 
     <nav class="menu">
         <ul class="first-level-navigation menu__first-level-navigation ">
-            <li class="first-level-navigation__item"><a class="link-navigation" href="#">Home</a></li>
-            <li class="first-level-navigation__item"><a class="link-navigation">Destinations</a>
+            <li class="first-level-navigation__item"><a class="link-navigation" href="#">Home<span class="red-line red-line_dynamic"></span></a></li>
+            <li class="first-level-navigation__item"><a class="link-navigation">Destinations<span class="red-line red-line_dynamic"></span></a>
                 <div class="second-level-navigation menu__second-level-navigation">
-                    <ul class="second-level-navigation__list">
-                        <li><a class="link-navigation link-navigation_mini" href="#">Ukraine</a></li>
-                        <li><a class="link-navigation link-navigation_mini" href="#">Poland</a></li>
-                        <li><a class="link-navigation link-navigation_mini" href="#">Georgia</a></li>
-                    </ul>
-                    <ul class="second-level-navigation__list">
-                        <li><a class="link-navigation link-navigation_mini" href="#">Turkish</a></li>
-                    </ul>
-                    <ul class="second-level-navigation__list">
-                        <li><a class="link-navigation link-navigation_mini" href="#">Australia</a></li>
-                        <li><a class="link-navigation link-navigation_mini" href="#">New Zeland</a></li>
-                    </ul>
+                    <div class="second-level-navigation__list-container">
+                        <h3 class="second-level-navigation__title">Europe</h3>
+                        <ul class="second-level-navigation__list">
+                            <li><a class="link-navigation link-navigation_mini" href="#">Ukraine</a></li>
+                            <li><a class="link-navigation link-navigation_mini" href="#">Poland</a></li>
+                            <li><a class="link-navigation link-navigation_mini" href="#">Georgia</a></li>
+                        </ul>
+                    </div>
+                    <div class="second-level-navigation__list-container">
+                        <h3 class="second-level-navigation__title">Asia</h3>
+                        <ul class="second-level-navigation__list">
+                            <li><a class="link-navigation link-navigation_mini" href="#">Turkish</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="second-level-navigation__list-container">
+                        <h3 class="second-level-navigation__title">Australia</h3>
+                        <ul class="second-level-navigation__list">
+                            <li><a class="link-navigation link-navigation_mini" href="#">Australia</a></li>
+                            <li><a class="link-navigation link-navigation_mini" href="#">New Zeland</a></li>
+                        </ul>
+                    </div>
+
                 </div>
 
             </li>
-            <li class="first-level-navigation__item"><a class="link-navigation" href="#">About me</a></li>
+            <li class="first-level-navigation__item"><a class="link-navigation" href="#">About me<span class="red-line red-line_dynamic"></span></a></li>
             <li class="first-level-navigation__item search-button">
                 <div class="search-button__bg"></div>
                 <svg class="search"  width="25" height="25"  viewBox="-15 -15 90 90" >
@@ -70,7 +81,9 @@
     <!--</div>-->
 
 </section>
+<h3 class="title">Top articles <span class="red-line"></span></h3>
 <sectiion class="blocks-grid news">
+
     <article class="block-large im1">
         <div>
         <h3>My travel</h3>
